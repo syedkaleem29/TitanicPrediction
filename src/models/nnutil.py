@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def nn_model(X, Y, layers_dim, learning_rate=0.05, lambd = 0,num_itr=2000, print_cost=False):
+def nn_model(X, Y, layers_dim, learning_rate=0.05, lambd = 0,num_itr=2500, print_cost=False):
 
     parameters = initialize_params(layers_dim)
     costs = []
@@ -199,6 +199,8 @@ def eval_model(Y, predictions):
     precision = (tp / total_predicted_positives) * 100
     recall = (tp / total_positives) * 100
     fscore = (2*precision*recall) / (precision + recall)
+    print("The precision is " + str(precision))
+    print("The recall is " + str(recall))
     print("The f score is " + str(fscore))
 
 
